@@ -66,3 +66,94 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Área de Acesso (PIN) -->
+    <div id="area-login" class="login-container">
+        <div class="login-box">
+            <h2>Acesso ao Boletim</h2>
+            <p class="login-info">Turma: <strong>9C</strong> | Número: <strong>32</strong></p>
+            <div class="form-group">
+                <label for="pin-input">Digite seu PIN:</label>
+                <input type="password" id="pin-input" placeholder="PIN" maxlength="20">
+            </div>
+            <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
+            <p id="mensagem-login" class="mensagem-status"></p>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal do Boletim (Oculto até o login) -->
+    <div id="conteudo-boletim" style="display: none;">
+        <!-- Cabeçalho Principal -->
+        <header>
+            <h1>Boletim Digital</h1>
+            <p class="subtitulo">9º Ano — Turma 9C (Nº 32)</p>
+            <div class="painel-acoes">
+                <button id="btn-alterar" onclick="abrirEdicao()">Alterar dados</button>
+                <button id="btn-salvar" onclick="salvarDados()" style="display: none;">Salvar alterações</button>
+                <button id="btn-cancelar" onclick="cancelarEdicao()" style="display: none;">Cancelar</button>
+            </div>
+            <p id="mensagem-boletim" class="mensagem-status-boletim"></p>
+        </header>
+
+        <main class="container">
+            
+            <!-- Área de Cards de Resumo -->
+            <section class="cards-grid">
+                <div class="card">
+                    <h3>Média Geral</h3>
+                    <p id="media-geral" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Total de Faltas</h3>
+                    <p id="total-faltas" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Bom Desempenho</h3>
+                    <p id="bom-desempenho" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Precisa de Atenção</h3>
+                    <p id="atencao" class="valor-card">—</p>
+                </div>
+                <div class="card">
+                    <h3>Frequência</h3>
+                    <p id="frequencia" class="valor-card">92%</p>
+                    <small>Frequência adequada</small>
+                </div>
+            </section>
+
+            <!-- Tabela de Notas -->
+            <section class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Disciplina</th>
+                            <th>1º Tri</th>
+                            <th>2º Tri</th>
+                            <th>3º Tri</th>
+                            <th>Média</th>
+                            <th>Faltas</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <!-- As linhas da tabela serão inseridas automaticamente pelo JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
